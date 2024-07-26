@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/header.css" />
+    <script
+      src="https://kit.fontawesome.com/db3c20a06c.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      * {
+        /* border: 1px solid; */
+        margin: 0px;
+        padding: 0px;
+        font-size: 13px;
+      }
+
+      input {
+        width: 400px;
+        height: 38px;
+        padding: 8px 30px 8px 0px;
+        border: none;
+        border-bottom: 1px solid #ebebeb;
+      }
+
+      input:focus {
+        outline: none;
+        border-bottom: 2px solid;
+      }
+
+      button {
+        width: 400px;
+        height: 52px;
+        color: #ffffff;
+        font-size: 16px;
+        background-color: #ebebeb;
+        border: 1px #ebebeb;
+        border-radius: 10px;
+      }
+
+      dt {
+        color: #22222280;
+      }
+
+      strong {
+        font-size: 16px;
+      }
+
+      /* main css */
+      main {
+        /* background-color: yellow; */
+        height: 754px;
+        margin-top: 86px;
+        padding: 0px 112px;
+      }
+
+      .login {
+        /* background-color: yellow; */
+        margin: 0 auto;
+        width: 400px;
+        height: 534px;
+        padding: 60px 0px 160px 0px;
+      }
+
+      .login_title {
+        height: 106px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .login_id,
+      .login_pw {
+        height: 80px;
+        padding: 10px 0px 14px;
+      }
+
+      .login_btn {
+        height: 72px;
+        padding: 20px 0px 0px;
+      }
+
+      .login_searchbar {
+        height: 16px;
+        margin-top: 20px;
+      }
+
+      .login_searchbar > ul {
+        display: flex;
+      }
+
+      .login_searchbar > ul > li {
+        width: 133.33px;
+        height: 16px;
+        text-align: center;
+      }
+
+      .login_etc {
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+      }
+
+      .login_etc > button {
+        color: black;
+        position: relative;
+        margin: 0px 0px 8px;
+      }
+
+      .login_etc > button > img {
+        position: absolute;
+        left: 20px;
+      }
+
+      /* footer css */
+      footer {
+        /* background-color: yellow; */
+        width: 1280px;
+        padding: 50px 40px;
+        margin: 0 auto;
+        border-top: 1px solid #ebebeb;
+      }
+
+      .footer_top {
+        /* background-color: yellow; */
+        height: 204px;
+        padding: 0px 0px 56px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer_top_list {
+        /* background-color: yellow; */
+        width: 400px;
+        height: 147px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer_top_list > ul {
+        width: 160px;
+      }
+
+      .footer_top_list > ul > li {
+        color: #22222280;
+        font-size: 14px;
+        padding: 12px 0px 0px;
+      }
+
+      .footer_top_cs {
+        width: 267px;
+        height: 147px;
+      }
+
+      .footer_top_cs > dt {
+        padding: 8px 0px 0px;
+      }
+
+      .footer_top_cs > p {
+        padding: 8px 0px 0px;
+      }
+
+      .footer_top_cs_button {
+        width: 267px;
+        height: 51px;
+        padding: 17px 0px 0px;
+      }
+
+      .footer_top_cs_button > button {
+        width: 109.3px;
+        height: 34px;
+        color: #fafafa;
+        background-color: black;
+        font-size: 12px;
+        padding: 0px 14px;
+        border-radius: 0px;
+      }
+
+      .footer_bottom {
+        /* background-color: yellow; */
+        width: 1200px;
+        height: 104px;
+        padding: 30px 0px 0px;
+        margin: 0 auto;
+        border-top: 1px solid #ebebeb;
+      }
+
+      .footer_bottom_top {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer_bottom_list {
+        /* background-color: yellow; */
+        width: 358.38px;
+        height: 32px;
+        padding: 0px 0px 16px;
+      }
+
+      .footer_bottom_list > ul {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer_bottom_list > ul > li {
+        font-size: 14px;
+      }
+
+      .footer_bottom_sns {
+        /* background-color: yellow; */
+        width: 112px;
+        height: 24px;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <script>
+      function validateEmail() {
+        const emailInput = document.getElementById("email");
+        const email = emailInput.value;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // 정규표현식
+        const errorId = document.getElementById("errorId");
+
+        if (!emailPattern.test(email)) {
+          errorId.textContent = "이메일 주소를 정확히 입력해주세요.";
+          errorId.style.color = "red";
+          emailInput.style.borderBottom = "1px solid red";
+          return false;
+        } else {
+          errorId.textContent = "";
+          emailInput.style.borderBottom = "1px solid #EBEBEB";
+          return true;
+        }
+      }
+
+      function validatePassword() {
+        const passwordInput = document.getElementById("password");
+        const password = passwordInput.value;
+        const errorPw = document.getElementById("errorPw");
+
+        if (password.length < 8) {
+          errorPw.textContent = "비밀번호는 8자 이상이어야 합니다.";
+          errorPw.style.color = "red";
+          passwordInput.style.borderBottom = "1px solid red";
+          return false;
+        } else {
+          errorPw.textContent = "";
+          passwordInput.style.borderBottom = "1px solid #EBEBEB";
+          return true;
+        }
+      }
+
+      function validateForm() {
+        const loginBtn = document.getElementById("loginBtn");
+        const emailValid = validateEmail();
+        const passwordValid = validatePassword();
+
+        if (emailValid && passwordValid) {
+          loginBtn.style.color = "#fff";
+          loginBtn.style.backgroundColor = "#000";
+        } else {
+          loginBtn.style.color = "#ffffff";
+          loginBtn.style.backgroundColor = "#ebebeb";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("email").addEventListener("input", function () {
+          if (validateEmail()) {
+            validateForm();
+          }
+        });
+
+        document
+          .getElementById("password")
+          .addEventListener("input", function () {
+            if (validatePassword()) {
+              validateForm();
+            }
+          });
+
+        document
+          .getElementById("loginBtn")
+          .addEventListener("click", function () {
+            const emailValid = validateEmail();
+            const passwordValid = validatePassword();
+
+            if (emailValid && passwordValid) {
+              alert("로그인 성공");
+            } else {
+              alert("이메일과 비밀번호를 확인하세요.");
+            }
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header-wrap">
+      <div class="header-top">
+        <div class="top-inner">
+          <ul class="top-list">
+            <li><a href="">고객센터</a></li>
+            <li><a href="">마이페이지</a></li>
+            <li><a href="">관심</a></li>
+            <li><a href="">알림</a></li>
+            <li><a href="">로그인</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-main">
+        <div class="main-inner">
+          <h1 class="logo">
+            <a href="">
+              <img
+                src="../images/assets/크림.png"
+                class="logo-img"
+                alt="logo"
+              />
+            </a>
+          </h1>
+          <div class="right">
+            <div class="gnb-area">
+              <nav class="gnb-wrap">
+                <ul class="gnb-list">
+                  <li><a href="">HOME</a></li>
+                  <li><a href="">STYLE</a></li>
+                  <li><a href="">SHOP</a></li>
+                </ul>
+              </nav>
+              <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- main     -->
+    <main>
+      <div class="login">
+        <div class="login_title">
+          <img
+            src="../images/assets/크림로고.png"
+            alt="크림"
+            width="250px"
+            height="56px"
+          />
+        </div>
+
+        <div class="login_id">
+          <h3>이메일 주소</h3>
+          <input
+            type="email"
+            id="email"
+            placeholder="예) kream@kream.co.kr"
+            autocomplete="off"
+          />
+          <p id="errorId"></p>
+        </div>
+
+        <div class="login_pw">
+          <h3>비밀번호</h3>
+          <input
+            type="password"
+            id="password"
+            autocomplete="off"
+            maxlength="16"
+          />
+          <p id="errorPw"></p>
+        </div>
+
+        <div class="login_btn">
+          <button onclick="handleLogin()" id="loginBtn">로그인</button>
+        </div>
+
+        <div class="login_searchbar">
+          <ul>
+            <li><a href="#">이메일 가입</a></li>
+            <li><a href="#">이메일 찾기</a></li>
+            <li><a href="#">비밀번호 찾기</a></li>
+          </ul>
+        </div>
+
+        <div class="login_etc">
+          <button>
+            <img
+              src="../images/assets/네이버로고.png"
+              alt="네이버"
+              width="20px"
+            />
+            <a href="#">네이버로 로그인</a>
+          </button>
+          <button>
+            <img src="../images//assets/애플로고.png" alt="애플" width="20px" />
+            <a href="#">Apple로 로그인</a>
+          </button>
+        </div>
+      </div>
+    </main>
+    <button class="btn_top">
+      <img src="/images/assets/arrow-to-top.png" alt="Go to top" />
+    </button>
+    <!-- footer -->
+    <footer>
+      <div class="footer_top">
+        <div class="footer_top_list">
+          <ul>
+            <strong>이용안내</strong>
+            <li>검수기준</li>
+            <li>이용정책</li>
+            <li>페널티 정책</li>
+            <li>커뮤니티 가이드라인</li>
+          </ul>
+          <ul>
+            <strong>고객지원</strong>
+            <li>공지사항</li>
+            <li>서비스 소개</li>
+            <li>스토어 안내</li>
+            <li>판매자 방문접수</li>
+          </ul>
+        </div>
+
+        <div class="footer_top_cs">
+          <strong>고객센터 1588-7813</strong>
+          <dt>
+            운영시간 평일 10:00 - 18:00 (토∙일, 공휴일 휴무) <br />
+            점심시간 평일 13:00 - 14:00
+          </dt>
+          <p>1:1 문의하기는 앱에서만 가능합니다.</p>
+          <div class="footer_top_cs_button">
+            <button>자주 묻는 질문</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_bottom">
+        <div class="footer_bottom_top">
+          <div class="footer_bottom_list">
+            <ul>
+              <li>회사소개</li>
+              <li>인재채용</li>
+              <li>제휴제안</li>
+              <li>이용약관</li>
+              <li><b>개인정보처리방침</b></li>
+            </ul>
+          </div>
+
+          <div class="footer_bottom_sns">
+            <img
+              src="../images/assets/인스타그램로고.png"
+              alt="인스타"
+              width="24px"
+              height="24px"
+            />
+            <img
+              src="../images/assets/페이스북로고.png"
+              alt="페북"
+              width="20px"
+              height="20px"
+            />
+            <img
+              src="../images/assets/카카오톡로고.png"
+              alt="카톡"
+              width="21px"
+              height="21.98px"
+            />
+          </div>
+        </div>
+
+        <dt>© KREAM Corp</dt>
+      </div>
+    </footer>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
