@@ -110,6 +110,12 @@ ul {
   letter-spacing: -0.27px;
   position: relative;
 }
+.header-wrap .header-bottom {
+  background-color: white;
+}
+.header-wrap .header-bottom ul {
+  background-color: white;
+}
 .header-wrap .header-bottom .tabs .tabs-list {
   padding-left: 40px;
   padding-right: 40px;
