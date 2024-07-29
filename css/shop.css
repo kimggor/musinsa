@@ -118,8 +118,7 @@ aside {
   min-width: 220px;
   position: sticky;
   top: 130px; /* 헤더 바로 아래에 위치하도록 설정 */
-  height: calc(100vh - 80px);
-  z-index: 5;
+  height: calc(100vh - 250px);
 }
 
 .search_filter {
