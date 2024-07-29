@@ -255,7 +255,6 @@ input[type="checkbox"]:checked::before {
 
 .search_contents {
   width: 980px;
-  height: 5000px;
 }
 .shop_counts {
   margin-top: 20px;
