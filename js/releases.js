@@ -192,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       wishBtn.addEventListener("click", function (e) {
         e.preventDefault();
+        e.stopPropagation(); // 이벤트 전파를 중지하여 item_detail.html로 이동하지 않게 함
         if (wishImg.src.includes("bookmark.svg")) {
           wishImg.src = "./images/assets/bookmark on.svg";
           addToWishlist(product);
@@ -207,6 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   moreDetailBtn.addEventListener("click", function (e) {
     e.preventDefault();
+    e.stopPropagation();
     loadProducts();
   });
 
