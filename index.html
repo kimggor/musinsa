@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="/css/home_swipper.css" />
     <link rel="stylesheet" href="/css/recommend.css" />
     <link rel="stylesheet" href="/css/shortcut_section.css" />
-    <link rel="stylesheet" href="/css/alert.css" />
+
     <link rel="stylesheet" href="/css/search.css" />
+    <link rel="stylesheet" href="/css/notice.css" />
     <script
       src="https://kit.fontawesome.com/db3c20a06c.js"
       crossorigin="anonymous"
@@ -29,7 +30,20 @@
             <li><a href="">고객센터</a></li>
             <li><a href="/pages/mypage.html">마이페이지</a></li>
             <li><a href="">관심</a></li>
-            <li><a href="" id="notification">알림</a></li>
+            <li>
+              <a href="" id="notification">
+                <button
+                  onclick="showNotice()"
+                  style="
+                    color: rgba(34, 34, 34, 0.8);
+                    font-size: 12px;
+                    cursor: pointer;
+                  "
+                >
+                  알림
+                </button></a
+              >
+            </li>
             <li><a href="pages/login.html">로그인</a></li>
           </ul>
         </div>
@@ -38,7 +52,11 @@
         <div class="main-inner">
           <h1 class="logo">
             <a href="">
-              <img src="./images/assets/크림.png" class="logo-img" alt="logo" />
+              <img
+                src="./images/assets/무신사.png"
+                class="logo-img"
+                alt="logo"
+              />
             </a>
           </h1>
           <div class="right">
@@ -334,11 +352,84 @@
     <button class="btn_top">
       <img src="/images/assets/arrow-to-top.png" alt="Go to top" />
     </button>
-    <div id="overlay"></div>
-    <div id="notification-popup">
-      <h2>알림</h2>
-      <p>알림 내용이 여기에 표시됩니다.</p>
-      <button id="close-popup">닫기</button>
+
+    <div class="notice-whole">
+      <div class="notice">
+        <div class="notice-header">
+          <div class="notice-close">
+            <button onclick="closeNotice()">
+              <i class="fa-solid fa-x"></i>
+            </button>
+          </div>
+          <div class="notice-word">알림</div>
+        </div>
+        <div class="notice-main">
+          <nav>
+            <ul>
+              <li class="tab-active"><a href="">쇼핑</a></li>
+              <li><a href="">스타일</a></li>
+            </ul>
+          </nav>
+          <div class="category">
+            <div><button class="button-active">전체</button></div>
+            <div><button>거래</button></div>
+            <div><button>입찰</button></div>
+            <div><button>보관판매</button></div>
+            <div><button>관심/발매</button></div>
+            <div><button>혜택</button></div>
+            <div><button>기타</button></div>
+          </div>
+        </div>
+        <div class="notice-list">
+          <p>알림 설정 및 삭제는 앱에서 가능합니다.</p>
+          <h3>지난 알림</h3>
+          <ul>
+            <li>
+              <div class="notice-icon">
+                <img
+                  src="/images/notice/cart_icon.png"
+                  width="30px"
+                  height="30px"
+                />
+              </div>
+            </li>
+            <li>
+              <div class="notice-buy">구매 확정</div>
+              <div class="notice-buyInfo">
+                B-BR89573049 - [KREAM 단독] Kashiko x... [OS]: 상품 구매가
+                확정되었습니다.
+              </div>
+              <p>2024년 7월 20일</p>
+            </li>
+            <li>
+              <img src="/images/notice/키링.webp" width="62px" height="62px" />
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <div class="notice-icon">
+                <img
+                  src="/images/notice/cart_icon.png"
+                  width="30px"
+                  height="30px"
+                />
+              </div>
+            </li>
+            <li>
+              <div class="notice-buy">배송 완료</div>
+              <div class="notice-buyInfo">
+                B-BR89573049 - [KREAM 단독] Kashiko x... [OS]: 상품 배송이
+                완료되었습니다.
+              </div>
+              <p>2024년 7월 13일</p>
+            </li>
+            <li>
+              <img src="/images/notice/키링.webp" width="62px" height="62px" />
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div id="search-overlay" class="hidden">
       <header class="header-wrap-2">
@@ -434,6 +525,6 @@
     <script src="/js/recommend.js"></script>
     <script src="/js/releases.js"></script>
     <script src="/js/shortcut.js"></script>
-    <script src="/js/alert.js"></script>
+    <script src="/js/notice.js"></script>
   </body>
 </html>

@@ -35,7 +35,8 @@ i {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 999;
+
+  z-index: 4;
 }
 .header-top,
 .header-main,
@@ -43,6 +44,7 @@ i {
   margin-left: auto;
   margin-right: auto;
   max-width: 1280px;
+  white-space: nowrap;
 }
 .header-wrap .header-top .top-inner {
   display: flex;
@@ -50,6 +52,7 @@ i {
   align-self: center;
   height: 22px;
   padding: 8px 40px 0;
+  white-space: nowrap;
 }
 .header-wrap .header-top .top-inner .top-list {
   align-items: center;
@@ -75,14 +78,14 @@ i {
   padding: 20px 40px;
 }
 .header-wrap .header-main .main-inner .logo {
-  width: 120px;
+  width: 142px;
   height: 24px;
   display: flex;
   justify-content: flex-start;
 }
 .header-wrap .header-main .main-inner .logo a {
   display: flex;
-  width: 120px;
+  width: 141px;
   height: 24px;
 }
 .header-wrap .header-main .main-inner .logo a .logo-img {

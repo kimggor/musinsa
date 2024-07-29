@@ -90,7 +90,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const itemInner = document.createElement("a");
       itemInner.classList.add("item-inner");
-      itemInner.href = "#";
+      itemInner.href = "/pages/item_detail.html";
+      itemInner.addEventListener("click", function (e) {
+        e.preventDefault();
+        localStorage.setItem("selectedProduct", JSON.stringify(product));
+        window.location.href = itemInner.href;
+      });
 
       const thumbBox = document.createElement("div");
       thumbBox.classList.add("thumb-box");
@@ -111,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
       wishImg.style.width = "24px";
       wishBtn.appendChild(wishImg);
 
-      // 로컬 스토리지에서 위시리스트를 확인하고 해당 아이템이 있을 경우 bookmark on.svg로 변경
       const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
       if (wishlist.some((item) => item.title === product.title)) {
         wishImg.src = "./images/assets/bookmark on.svg";

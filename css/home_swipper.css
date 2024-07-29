@@ -25,7 +25,7 @@ body {
   width: 60%;
   height: 480px;
   object-fit: cover;
-  z-index: 999;
+  z-index: 1;
   transition: opacity 0.6s ease-in-out;
 }
 

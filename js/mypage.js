@@ -13,7 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const itemInner = document.createElement("a");
       itemInner.classList.add("item-inner");
-      itemInner.href = "#";
+      itemInner.href = "/pages/item_detail.html";
+      itemInner.addEventListener("click", function (e) {
+        e.preventDefault();
+        localStorage.setItem("selectedProduct", JSON.stringify(product));
+        window.location.href = itemInner.href;
+      });
 
       const thumbBox = document.createElement("div");
       thumbBox.classList.add("thumb-box");

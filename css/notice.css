@@ -1,0 +1,157 @@
+.notice-whole {
+}
+.notice {
+  width: 420px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: none;
+  background-color: white;
+  z-index: 10;
+  overflow-y: auto; /* 스크롤 가능하도록 */
+}
+
+.notice-header {
+  padding: 19px 56px 16px 24px;
+  display: flex;
+  align-items: center;
+}
+
+.notice-close {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.notice-close button {
+  font-size: 18px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.notice-word {
+  height: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: -3px;
+}
+
+.notice-main nav {
+  height: 44px;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.notice-main nav ul {
+  list-style: none;
+  display: flex;
+  line-height: 44px;
+  margin: 0 24px;
+  padding: 0;
+}
+
+.notice-main nav ul li {
+  margin-right: 25px;
+  font-size: 15px;
+}
+
+.notice-main nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.category {
+  height: 78px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px 24px;
+  gap: 12px 6px;
+}
+
+.category div {
+  height: 33px;
+}
+
+.category div button {
+  height: 33px;
+  padding: 7px 16px;
+  border: 1px solid #f0f0f0;
+  background-color: white;
+  font-size: 12px;
+  border-radius: 30px;
+}
+
+.category div .button-active {
+  background-color: black;
+  color: white;
+}
+
+.notice-list {
+  padding: 0 24px;
+  margin-top: 36px;
+}
+
+.notice-list p {
+  color: rgba(34, 34, 34, 0.5);
+  font-size: 13px;
+  margin-bottom: 24px;
+  margin-top: 16px;
+}
+
+.notice-list h3 {
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.notice-list ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.notice-list ul li {
+  padding-right: 12px;
+}
+
+.notice-list ul li .notice-icon {
+  width: 46px;
+  height: 46px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: coral;
+  text-align: center;
+  line-height: 60px;
+}
+
+.notice-list ul li div img {
+  font-size: 27px;
+}
+
+.notice-buy {
+  font-weight: 600;
+}
+
+.notice-buyInfo {
+  font-size: 15px;
+}
+
+.tab-active {
+  border-bottom: 2px solid #222;
+  color: #222;
+  cursor: pointer;
+  position: relative;
+  font-weight: 700;
+}
+
+.notice-whole {
+  display: none; /* 추가된 부분 */
+}
+* {
+  white-space: wrap;
+  text-overflow: ellipsis;
+}

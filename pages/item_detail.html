@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/itme_detail.css" />
+    <script
+      src="https://kit.fontawesome.com/db3c20a06c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header-wrap">
+      <div class="header-top">
+        <div class="top-inner">
+          <ul class="top-list">
+            <li><a href="">고객센터</a></li>
+            <li><a href="/pages/mypage.html">마이페이지</a></li>
+            <li><a href="/pages/mypage.html">관심</a></li>
+            <li><a href="" id="notification">알림</a></li>
+            <li><a href="pages/login.html">로그인</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-main">
+        <div class="main-inner">
+          <h1 class="logo">
+            <a href="../index.html">
+              <img
+                src="/images/assets/무신사.png"
+                class="logo-img"
+                alt="logo"
+              />
+            </a>
+          </h1>
+          <div class="right">
+            <div class="gnb-area">
+              <nav class="gnb-wrap">
+                <ul class="gnb-list">
+                  <li><a href="/index.html" class="active">HOME</a></li>
+                  <li><a href="/pages/kreamstyle.html">STYLE</a></li>
+                  <li><a href="/pages/shop.html">SHOP</a></li>
+                </ul>
+              </nav>
+              <i class="fa-solid fa-magnifying-glass fa-xl" id="searchBtn"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="detail-container">
+      <div class="item-img">
+        <div><img src="/images/recommend_img/내폰시세.webp" alt="" /></div>
+      </div>
+      <div class="item-detail-info">
+        <div class="text-wrap">
+          <div class="immediately">즉시 구매가</div>
+          <h2 class="price"></h2>
+          <div class="name-wrap">
+            <div class="item-name"></div>
+            <div class="item-sub-name"></div>
+          </div>
+        </div>
+        <select name="" id="">
+          <option value="L">L</option>
+          <option value="M">M</option>
+        </select>
+        <div class="button-wrap">
+          <div class="buy-button">
+            <div class="button-text">구매</div>
+            <div class="price-wrap">
+              <div class="price"></div>
+              <div class="immediately">즉시구매가</div>
+            </div>
+          </div>
+          <div class="sell-button">
+            <div class="button-text">판매</div>
+            <div class="price-wrap">
+              <div class="price"></div>
+              <div class="immediately">즉시구매가</div>
+            </div>
+          </div>
+        </div>
+        <button class="save-wish-list">
+          <img src="/images/assets/bookmark on.svg" alt="" />
+          <span>관심상품</span>
+        </button>
+      </div>
+    </div>
+    <div id="wishlistContainer"></div>
+
+    <script src="/js/mypage.js"></script>
+    <script src="/js/item_detail.js"></script>
+  </body>
+</html>

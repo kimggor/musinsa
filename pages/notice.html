@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/4ec79785b5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./notice.css" />
+  </head>
+
+  <body>
+    <button onclick="showNotice()">알림</button>
+    <div class="notice-whole">
+      <div class="notice">
+        <div class="notice-header">
+          <div class="notice-close">
+            <button onclick="closeNotice()">
+              <i class="fa-solid fa-x"></i>
+            </button>
+          </div>
+          <div class="notice-word">알림</div>
+        </div>
+        <div class="notice-main">
+          <nav>
+            <ul>
+              <li class="tab-active"><a href="">쇼핑</a></li>
+              <li><a href="">스타일</a></li>
+            </ul>
+          </nav>
+          <div class="category">
+            <div><button class="button-active">전체</button></div>
+            <div><button>거래</button></div>
+            <div><button>입찰</button></div>
+            <div><button>보관판매</button></div>
+            <div><button>관심/발매</button></div>
+            <div><button>혜택</button></div>
+            <div><button>기타</button></div>
+          </div>
+        </div>
+        <div class="notice-list">
+          <p>알림 설정 및 삭제는 앱에서 가능합니다.</p>
+          <h3>지난 알림</h3>
+          <ul>
+            <li>
+              <div class="notice-icon">
+                <img
+                  src="../프로젝트/images/cart_icon.png"
+                  width="30px"
+                  height="30px"
+                />
+              </div>
+            </li>
+            <li>
+              <div class="notice-buy">구매 확정</div>
+              <div class="notice-buyInfo">
+                B-BR89573049 - [KREAM 단독] Kashiko x... [OS]: 상품 구매가
+                확정되었습니다.
+              </div>
+              <p>2024년 7월 20일</p>
+            </li>
+            <li>
+              <img
+                src="../프로젝트/images/알림 사진.webp"
+                width="62px"
+                height="62px"
+              />
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <div class="notice-icon">
+                <img
+                  src="../프로젝트/images/cart_icon.png"
+                  width="30px"
+                  height="30px"
+                />
+              </div>
+            </li>
+            <li>
+              <div class="notice-buy">배송 완료</div>
+              <div class="notice-buyInfo">
+                B-BR89573049 - [KREAM 단독] Kashiko x... [OS]: 상품 배송이
+                완료되었습니다.
+              </div>
+              <p>2024년 7월 13일</p>
+            </li>
+            <li>
+              <img
+                src="../프로젝트/images/알림 사진.webp"
+                width="62px"
+                height="62px"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      function showNotice() {
+        let notice = document.querySelector(".notice");
+        let noticeWhole = document.querySelector(".notice-whole");
+        notice.style.display = "block";
+        noticeWhole.style.backgroundColor = "rgba(34, 34, 34, .5)";
+        noticeWhole.style.position = "absolute";
+        noticeWhole.style.top = "0";
+        noticeWhole.style.right = "0";
+        noticeWhole.style.left = "0";
+        noticeWhole.style.bottom = "0";
+        noticeWhole.style.height = "5000px";
+        noticeWhole.style.width = "100%";
+        noticeWhole.style.border = "none";
+        noticeWhole.style.zIndex = "10";
+      }
+      function closeNotice() {
+        let notice = document.querySelector(".notice");
+        let noticeWhole = document.querySelector(".notice-whole");
+        notice.style.display = "none";
+        noticeWhole.style.backgroundColor = "white";
+        noticeWhole.style.zIndex = "-2";
+      }
+    </script>
+  </body>
+</html>
