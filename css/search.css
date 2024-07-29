@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.search-delete {
+.search_delete {
   background-color: white;
   border: none;
 }
@@ -23,7 +23,6 @@
   border-bottom: 3px solid #000;
   flex: none;
   flex-grow: 1;
-
   order: 0;
   padding-bottom: 16px;
 }
