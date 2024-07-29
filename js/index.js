@@ -1,42 +1,55 @@
-const btnTop = document.querySelector(".btn_top");
+document.addEventListener("DOMContentLoaded", () => {
+  const btnTop = document.querySelector(".btn_top");
+  const searchBtn = document.getElementById("searchBtn");
+  const searchOverlay = document.getElementById("search-overlay");
+  const searchInput = document.getElementById("search");
+  const searchDelete = document.querySelector(".search_delete");
+  const closeOverlayBtn = document.querySelector(".close-overlay");
 
-btnTop.addEventListener("click", function () {
-  window.scrollTo({
-    top: 0,
-  });
-});
+  const closeSearch = () => {
+    document.body.classList.remove("overlay-visible");
+    if (searchOverlay) searchOverlay.classList.add("hidden");
+  };
 
-document.getElementById("searchBtn").addEventListener("click", function () {
-  document.body.classList.add("overlay-visible");
-  document.getElementById("search-overlay").classList.remove("hidden");
-});
+  const clearSearch = () => {
+    if (searchInput) searchInput.value = "";
+    document.querySelector("main").style.display = "block";
+    if (searchDelete) searchDelete.style.display = "block";
+    document.querySelector(".recommend").style.display = "block";
+    document.querySelector(".ranking").style.display = "block";
+    document.querySelector(".collabo").style.display = "block";
+  };
 
-document.querySelector(".search_delete").addEventListener("click", function () {
-  clearSearch();
-});
-document.querySelector(".close-overlay").addEventListener("click", function () {
-  closeSearch();
-});
-function closeSearch() {
-  document.body.classList.remove("overlay-visible");
-  document.getElementById("search-overlay").classList.add("hidden");
-}
+  if (btnTop) {
+    btnTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0 });
+    });
+  }
 
-function clearSearch() {
-  document.getElementById("search").value = "";
-  document.querySelector("main").style.display = "block";
-  document.querySelector(".search_delete").style.display = "block";
-  document.querySelector(".recommend").style.display = "block";
-  document.querySelector(".ranking").style.display = "block";
-  document.querySelector(".collabo").style.display = "block";
-}
+  if (searchBtn) {
+    searchBtn.addEventListener("click", () => {
+      document.body.classList.add("overlay-visible");
+      if (searchOverlay) searchOverlay.classList.remove("hidden");
+    });
+  }
 
-document.getElementById("search").addEventListener("input", function () {
-  if (this.value.length > 0) {
-    document.querySelector("main").style.display = "none"; // 메인 콘텐츠 숨기기
-    document.querySelector(".search_delete").style.display = "flex"; // 삭제 버튼 표시
-  } else {
-    document.querySelector("main").style.display = "block"; // 메인 콘텐츠 표시
-    document.querySelector(".search_delete").style.display = "none"; // 삭제 버튼 숨기기
+  if (searchDelete) {
+    searchDelete.addEventListener("click", clearSearch);
+  }
+
+  if (closeOverlayBtn) {
+    closeOverlayBtn.addEventListener("click", closeSearch);
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("input", function () {
+      if (this.value.length > 0) {
+        document.querySelector("main").style.display = "none";
+        if (searchDelete) searchDelete.style.display = "flex";
+      } else {
+        document.querySelector("main").style.display = "block";
+        if (searchDelete) searchDelete.style.display = "none";
+      }
+    });
   }
 });

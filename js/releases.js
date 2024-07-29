@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const products = [
     {
       src: "/images/releases_img/솔로몬신발.webp",
@@ -81,148 +81,198 @@ document.addEventListener("DOMContentLoaded", function () {
   const productList = document.getElementById("productList");
   const moreDetailBtn = document.getElementById("moreDetail");
 
-  function loadProducts() {
+  const loadProducts = () => {
     const nextIndex = currentIndex + itemsPerPage;
     const productsToLoad = products.slice(currentIndex, nextIndex);
+
     productsToLoad.forEach((product) => {
-      const productItem = document.createElement("div");
-      productItem.classList.add("product-item");
-
-      const itemInner = document.createElement("a");
-      itemInner.classList.add("item-inner");
-      itemInner.href = "/pages/item_detail.html";
-      itemInner.addEventListener("click", function (e) {
-        e.preventDefault();
-        localStorage.setItem("selectedProduct", JSON.stringify(product));
-        window.location.href = itemInner.href;
-      });
-
-      const thumbBox = document.createElement("div");
-      thumbBox.classList.add("thumb-box");
-
-      const productDiv = document.createElement("div");
-      productDiv.classList.add("product");
-      productDiv.style.backgroundImage = `url(${product.src})`;
-
-      const statusValue = document.createElement("div");
-      statusValue.classList.add("status-value");
-      statusValue.textContent = product.deals;
-
-      const wishBtn = document.createElement("div");
-      wishBtn.classList.add("wish-btn");
-      const wishImg = document.createElement("img");
-      wishImg.src = "./images/assets/bookmark.svg";
-      wishImg.alt = "Wish";
-      wishImg.style.width = "24px";
-      wishBtn.appendChild(wishImg);
-
-      const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-      if (wishlist.some((item) => item.title === product.title)) {
-        wishImg.src = "./images/assets/bookmark on.svg";
-      }
-
-      thumbBox.appendChild(productDiv);
-      thumbBox.appendChild(statusValue);
-      thumbBox.appendChild(wishBtn);
-
-      const infoBox = document.createElement("div");
-      infoBox.classList.add("info-box");
-
-      const brandDiv = document.createElement("div");
-      brandDiv.classList.add("brand");
-      const brandText = document.createElement("p");
-      brandText.classList.add("brand-text");
-      brandText.textContent = product.brand;
-      brandDiv.appendChild(brandText);
-
-      const nameP = document.createElement("p");
-      nameP.classList.add("name");
-      nameP.textContent = product.title;
-
-      const priceDiv = document.createElement("div");
-      priceDiv.classList.add("price");
-
-      const amountDiv = document.createElement("div");
-      amountDiv.classList.add("amount");
-
-      if (product.discount) {
-        const discountSpan = document.createElement("span");
-        discountSpan.classList.add("discount");
-        discountSpan.textContent = product.discount;
-        amountDiv.appendChild(discountSpan);
-      }
-
-      const priceP = document.createElement("p");
-      priceP.textContent = product.price;
-      amountDiv.appendChild(priceP);
-
-      const descDiv = document.createElement("div");
-      descDiv.classList.add("desc");
-      const descP = document.createElement("p");
-      descP.textContent = "즉시 구매가";
-      descDiv.appendChild(descP);
-
-      priceDiv.appendChild(amountDiv);
-      priceDiv.appendChild(descDiv);
-
-      infoBox.appendChild(brandDiv);
-      infoBox.appendChild(nameP);
-
-      if (product.tags) {
-        const tagsDiv = document.createElement("div");
-        tagsDiv.classList.add("tags");
-        const tagsItemDiv = document.createElement("div");
-        tagsItemDiv.classList.add("tags-item");
-        product.tags.forEach((tag) => {
-          const tagSpan = document.createElement("span");
-          tagSpan.textContent = tag;
-          tagsItemDiv.appendChild(tagSpan);
-        });
-        tagsDiv.appendChild(tagsItemDiv);
-        infoBox.appendChild(tagsDiv);
-      }
-
-      infoBox.appendChild(priceDiv);
-
-      itemInner.appendChild(thumbBox);
-      itemInner.appendChild(infoBox);
-
-      productItem.appendChild(itemInner);
+      const productItem = createProductItem(product);
       productList.appendChild(productItem);
-
-      wishBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation(); // 이벤트 전파를 중지하여 item_detail.html로 이동하지 않게 함
-        if (wishImg.src.includes("bookmark.svg")) {
-          wishImg.src = "./images/assets/bookmark on.svg";
-          addToWishlist(product);
-        } else {
-          wishImg.src = "./images/assets/bookmark.svg";
-          removeFromWishlist(product);
-        }
-      });
     });
 
     currentIndex = nextIndex;
-  }
+  };
 
-  moreDetailBtn.addEventListener("click", function (e) {
+  const createProductItem = (product) => {
+    const productItem = document.createElement("div");
+    productItem.classList.add("product-item");
+
+    const itemInner = document.createElement("a");
+    itemInner.classList.add("item-inner");
+    itemInner.href = "/pages/item_detail.html";
+    itemInner.addEventListener("click", (e) => handleItemClick(e, product));
+
+    const thumbBox = createThumbBox(product);
+    const infoBox = createInfoBox(product);
+
+    itemInner.appendChild(thumbBox);
+    itemInner.appendChild(infoBox);
+
+    productItem.appendChild(itemInner);
+
+    return productItem;
+  };
+
+  const handleItemClick = (e, product) => {
+    e.preventDefault();
+    localStorage.setItem("selectedProduct", JSON.stringify(product));
+    window.location.href = "/pages/item_detail.html";
+  };
+
+  const createThumbBox = (product) => {
+    const thumbBox = document.createElement("div");
+    thumbBox.classList.add("thumb-box");
+
+    const productDiv = document.createElement("div");
+    productDiv.classList.add("product");
+    productDiv.style.backgroundImage = `url(${product.src})`;
+
+    const statusValue = document.createElement("div");
+    statusValue.classList.add("status-value");
+    statusValue.textContent = product.deals;
+
+    const wishBtn = createWishButton(product);
+
+    thumbBox.appendChild(productDiv);
+    thumbBox.appendChild(statusValue);
+    thumbBox.appendChild(wishBtn);
+
+    return thumbBox;
+  };
+
+  const createWishButton = (product) => {
+    const wishBtn = document.createElement("div");
+    wishBtn.classList.add("wish-btn");
+
+    const wishImg = document.createElement("img");
+    wishImg.src = "./images/assets/bookmark.svg";
+    wishImg.alt = "Wish";
+    wishImg.style.width = "24px";
+
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    if (wishlist.some((item) => item.title === product.title)) {
+      wishImg.src = "./images/assets/bookmark on.svg";
+    }
+
+    wishBtn.appendChild(wishImg);
+
+    wishBtn.addEventListener("click", (e) =>
+      handleWishButtonClick(e, wishImg, product),
+    );
+
+    return wishBtn;
+  };
+
+  const handleWishButtonClick = (e, wishImg, product) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (wishImg.src.includes("bookmark.svg")) {
+      wishImg.src = "./images/assets/bookmark on.svg";
+      addToWishlist(product);
+    } else {
+      wishImg.src = "./images/assets/bookmark.svg";
+      removeFromWishlist(product);
+    }
+  };
+
+  const addToWishlist = (product) => {
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    wishlist.push(product);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  };
+
+  const removeFromWishlist = (product) => {
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    wishlist = wishlist.filter((item) => item.title !== product.title);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  };
+
+  const createInfoBox = (product) => {
+    const infoBox = document.createElement("div");
+    infoBox.classList.add("info-box");
+
+    const brandDiv = document.createElement("div");
+    brandDiv.classList.add("brand");
+
+    const brandText = document.createElement("p");
+    brandText.classList.add("brand-text");
+    brandText.textContent = product.brand;
+    brandDiv.appendChild(brandText);
+
+    const nameP = document.createElement("p");
+    nameP.classList.add("name");
+    nameP.textContent = product.title;
+
+    const priceDiv = createPriceDiv(product);
+
+    infoBox.appendChild(brandDiv);
+    infoBox.appendChild(nameP);
+
+    if (product.tags) {
+      const tagsDiv = createTagsDiv(product.tags);
+      infoBox.appendChild(tagsDiv);
+    }
+
+    infoBox.appendChild(priceDiv);
+
+    return infoBox;
+  };
+
+  const createPriceDiv = (product) => {
+    const priceDiv = document.createElement("div");
+    priceDiv.classList.add("price");
+
+    const amountDiv = document.createElement("div");
+    amountDiv.classList.add("amount");
+
+    if (product.discount) {
+      const discountSpan = document.createElement("span");
+      discountSpan.classList.add("discount");
+      discountSpan.textContent = product.discount;
+      amountDiv.appendChild(discountSpan);
+    }
+
+    const priceP = document.createElement("p");
+    priceP.textContent = product.price;
+    amountDiv.appendChild(priceP);
+
+    const descDiv = document.createElement("div");
+    descDiv.classList.add("desc");
+
+    const descP = document.createElement("p");
+    descP.textContent = "즉시 구매가";
+    descDiv.appendChild(descP);
+
+    priceDiv.appendChild(amountDiv);
+    priceDiv.appendChild(descDiv);
+
+    return priceDiv;
+  };
+
+  const createTagsDiv = (tags) => {
+    const tagsDiv = document.createElement("div");
+    tagsDiv.classList.add("tags");
+
+    const tagsItemDiv = document.createElement("div");
+    tagsItemDiv.classList.add("tags-item");
+
+    tags.forEach((tag) => {
+      const tagSpan = document.createElement("span");
+      tagSpan.textContent = tag;
+      tagsItemDiv.appendChild(tagSpan);
+    });
+
+    tagsDiv.appendChild(tagsItemDiv);
+
+    return tagsDiv;
+  };
+
+  moreDetailBtn.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
     loadProducts();
   });
 
   loadProducts();
-
-  function addToWishlist(product) {
-    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-    wishlist.push(product);
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-  }
-
-  function removeFromWishlist(product) {
-    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-    wishlist = wishlist.filter((item) => item.title !== product.title);
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-  }
 });

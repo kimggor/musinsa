@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>무신사</title>
     <link rel="stylesheet" href="../css/rankingstyle.css" />
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="/css/notice.css" />
+    <link rel="stylesheet" href="/css/search.css" />
     <script
       src="https://kit.fontawesome.com/4ec79785b5.js"
       crossorigin="anonymous"
@@ -60,7 +61,7 @@
                   <li><a href="/pages/shop.html">SHOP</a></li>
                 </ul>
               </nav>
-              <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+              <i class="fa-solid fa-magnifying-glass fa-xl" id="searchBtn"></i>
             </div>
           </div>
         </div>
@@ -674,6 +675,94 @@
           </ul>
         </div>
       </div>
+    </div>
+    <div id="search-overlay" class="hidden">
+      <header class="header-wrap-2">
+        <div class="search-box">
+          <input
+            class="input"
+            type="text"
+            id="search"
+            placeholder="브랜드, 상품, 프로필, 태그 등"
+          />
+          <button class="search_delete">
+            <img src="/images/assets/icons8-취소하다.svg" alt="" />
+          </button>
+        </div>
+      </header>
+      <a class="close-overlay"
+        ><img src="/images/assets/close_overlay.svg" alt=""
+      /></a>
+      <main class="main-wrap">
+        <div class="recommend-wrap">
+          <div class="recommend-term">추천 검색어</div>
+          <ul class="recommend-list">
+            <li class="li">인생향수 찾기</li>
+            <li class="li">the phone</li>
+            <li class="li">에어포스</li>
+            <li class="li">반팔 스투시</li>
+            <li class="li">아이앱 크롭</li>
+            <li class="li recommend_li_text">나이키 에어포스 화...</li>
+          </ul>
+        </div>
+
+        <div class="ranking-wrap">
+          <div class="ranking-term">
+            인기 검색어 <span class="time">07.31 14:00 기준</span>
+          </div>
+
+          <ol class="ranking-list">
+            <li class="li"><span class="list-index">1</span> 반스 베이프</li>
+            <li class="li">
+              <span class="list-index">2</span> 보메로
+              <sup class="sup">NEW</sup>
+            </li>
+            <li class="li"><span class="list-index">3</span> 알파</li>
+            <li class="li"><span class="list-index">4</span> 신발</li>
+            <li class="li"><span class="list-index">5</span> 알파플라이</li>
+            <li class="li">
+              <span class="list-index">6</span> 포터 <sup class="sup">NEW</sup>
+            </li>
+            <li class="li">
+              <span class="list-index">7</span> 알파플라이3
+              <sup class="sup">NEW</sup>
+            </li>
+            <li class="li"><span class="list-index">8</span> 아디다스 삼바</li>
+            <li class="li"><span class="list-index">9</span> 조던4</li>
+            <li class="li"><span class="list-index">10</span> 호카</li>
+            <li class="li"><span class="list-index">11</span> 향수</li>
+            <li class="li"><span class="list-index">12</span> 에이포스</li>
+            <li class="li"><span class="list-index">13</span> 휴먼메이드</li>
+            <li class="li"><span class="list-index">14</span> 컨버스</li>
+            <li class="li"><span class="list-index">15</span> 선글라스</li>
+            <li class="li"><span class="list-index">16</span> 젤카야노</li>
+            <li class="li"><span class="list-index">17</span> 킨</li>
+            <li class="li"><span class="list-index">18</span> 스페지알</li>
+            <li class="li"><span class="list-index">19</span> 폴로</li>
+            <li class="li"><span class="list-index">20</span> 조던</li>
+          </ol>
+        </div>
+
+        <div class="collabo-wrap">
+          <div class="collabo-title">인기 콜라보</div>
+          <ul class="collabo-list">
+            <li class="li">
+              <span class="list-index">1</span> 나이키 x 트래비스 스캇
+            </li>
+            <li class="li"><span class="list-index">4</span> 나이키 x 녹타</li>
+            <li class="li">
+              <span class="list-index">2</span> 조던 x 트래비스 스캇
+            </li>
+            <li class="li"><span class="list-index">5</span> 나이키 x 보디</li>
+            <li class="li">
+              <span class="list-index">3</span> T1 x DAVID AVLN
+            </li>
+            <li class="li">
+              <span class="list-index">6</span> 아이앱 스튜디오 x 요넥스
+            </li>
+          </ul>
+        </div>
+      </main>
     </div>
     <script>
       function showMore() {

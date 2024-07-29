@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let i = 1; i <= totalImages; i++) {
     const swiperSlide = document.createElement("div");
     swiperSlide.classList.add("swiper-slide");
-    swiperSlide.style.backgroundColor = colors[i - 1]; // 배경 색상 설정
+    swiperSlide.style.backgroundColor = colors[i - 1];
 
     const img = document.createElement("img");
     img.src = `/images/swipper_img/img-${i}.webp`;

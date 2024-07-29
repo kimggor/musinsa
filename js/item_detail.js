@@ -1,45 +1,50 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const product = JSON.parse(localStorage.getItem("selectedProduct"));
   if (product) {
-    document.querySelector(".item-img img").src = product.src;
-    document.querySelector(".price").textContent = product.price;
-    document.querySelector(".item-name").textContent = product.title;
-    document.querySelector(".item-sub-name").textContent = product.title;
-    document.querySelector(".buy-button .price").textContent = product.price;
-    document.querySelector(".sell-button .price").textContent = product.price;
+    const updateProductDetails = () => {
+      document.querySelector(".item-img img").src = product.src;
+      document.querySelector(".price").textContent = product.price;
+      document.querySelector(".item-name").textContent = product.title;
+      document.querySelector(".item-sub-name").textContent = product.title;
+      document.querySelector(".buy-button .price").textContent = product.price;
+      document.querySelector(".sell-button .price").textContent = product.price;
 
-    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-    if (wishlist.some((item) => item.title === product.title)) {
-      document.querySelector(".save-wish-list img").src =
-        "../images/assets/bookmark on.svg";
-    } else {
-      document.querySelector(".save-wish-list img").src =
-        "../images/assets/bookmark.svg";
-    }
+      const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      const bookmarkImg = document.querySelector(".save-wish-list img");
 
-    document
-      .querySelector(".save-wish-list")
-      .addEventListener("click", function () {
-        const img = document.querySelector(".save-wish-list img");
-        if (img.src.includes("bookmark.svg")) {
-          img.src = "../images/assets/bookmark on.svg";
-          addToWishlist(product);
-        } else {
-          img.src = "../images/assets/bookmark.svg";
-          removeFromWishlist(product);
-        }
-      });
-  }
+      if (wishlist.some((item) => item.title === product.title)) {
+        bookmarkImg.src = "../images/assets/bookmark on.svg";
+      } else {
+        bookmarkImg.src = "../images/assets/bookmark.svg";
+      }
 
-  function addToWishlist(product) {
-    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-    wishlist.push(product);
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-  }
+      document
+        .querySelector(".save-wish-list")
+        .addEventListener("click", () => toggleWishlist(product, bookmarkImg));
+    };
 
-  function removeFromWishlist(product) {
-    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-    wishlist = wishlist.filter((item) => item.title !== product.title);
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    const toggleWishlist = (product, img) => {
+      if (img.src.includes("bookmark.svg")) {
+        img.src = "../images/assets/bookmark on.svg";
+        addToWishlist(product);
+      } else {
+        img.src = "../images/assets/bookmark.svg";
+        removeFromWishlist(product);
+      }
+    };
+
+    const addToWishlist = (product) => {
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      wishlist.push(product);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    };
+
+    const removeFromWishlist = (product) => {
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      wishlist = wishlist.filter((item) => item.title !== product.title);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    };
+
+    updateProductDetails();
   }
 });

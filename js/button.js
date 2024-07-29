@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // 이동할 슬라이드 인덱스 설정
   const slideIndices = [0, 9, 10];
   let currentIndex = 0; // 현재 인덱스 추적
-
+  updateSlideWidth();
   function updateSlideWidth() {
     const containerWidth = container.getBoundingClientRect().width;
     const slideWidth = containerWidth / 9; // 화면에 9개의 슬라이드가 보이도록 설정

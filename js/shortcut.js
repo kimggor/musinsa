@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const brands = [
     { name: "나이키", img: "/images/top_brand/나이키.webp" },
     { name: "아디다스", img: "/images/top_brand/아디다스.webp" },
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const shortcutItemsContainer = document.getElementById("shortcutItems");
   const bannerContainer = document.getElementById("banner");
 
-  brands.forEach((brand) => {
+  const createShortcutItem = (brand) => {
     const shortcutItem = document.createElement("a");
     shortcutItem.href = "";
     shortcutItem.classList.add("shortcut-item");
@@ -32,21 +32,25 @@ document.addEventListener("DOMContentLoaded", function () {
     itemImg.classList.add("item-img");
     itemImg.style.backgroundImage = `url(${brand.img})`;
 
-    itemImgWrap.appendChild(itemImg);
-
     const itemTitle = document.createElement("p");
     itemTitle.classList.add("shortcut-item-title");
     itemTitle.textContent = brand.name;
 
+    itemImgWrap.appendChild(itemImg);
     shortcutItem.appendChild(itemImgWrap);
     shortcutItem.appendChild(itemTitle);
 
+    return shortcutItem;
+  };
+
+  brands.forEach((brand) => {
+    const shortcutItem = createShortcutItem(brand);
     shortcutItemsContainer.appendChild(shortcutItem);
   });
 
   const banners = [{ img: "/images/banner/광고1.webp" }];
 
-  banners.forEach((banner) => {
+  const createBannerItem = (banner) => {
     const bannerItem = document.createElement("div");
     bannerItem.classList.add("banner_item");
 
@@ -63,5 +67,12 @@ document.addEventListener("DOMContentLoaded", function () {
     imgBox.appendChild(bannerImg);
     itemInner.appendChild(imgBox);
     bannerItem.appendChild(itemInner);
+
+    return bannerItem;
+  };
+
+  banners.forEach((banner) => {
+    const bannerItem = createBannerItem(banner);
+    bannerContainer.appendChild(bannerItem);
   });
 });
