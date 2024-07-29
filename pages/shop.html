@@ -4,37 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/header.css" />
-    <link rel="stylesheet" href="../css/shop.css" />
-    <link rel="stylesheet" href="../css/notice.css" />
+    <link rel="stylesheet" href="/css/header.css" />
     <script
       src="https://kit.fontawesome.com/db3c20a06c.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="/css/shop.css" />
   </head>
   <body>
+    <button class="btn_top">
+      <img src="/images/assets/arrow-to-top.png" alt="Go to top" />
+    </button>
     <div class="wrap">
-      <header class="header-wrap">
+      <header class="header-wrap" style="box-shadow: none">
         <div class="header-top">
           <div class="top-inner">
             <ul class="top-list">
               <li><a href="">고객센터</a></li>
               <li><a href="/pages/mypage.html">마이페이지</a></li>
               <li><a href="/pages/mypage.html">관심</a></li>
-              <li>
-                <a href="" id="notification">
-                  <button
-                    onclick="showNotice()"
-                    style="
-                      color: rgba(34, 34, 34, 0.8);
-                      font-size: 12px;
-                      cursor: pointer;
-                    "
-                  >
-                    알림
-                  </button></a
-                >
-              </li>
+              <li><a href="">알림</a></li>
               <li><a href="/pages/login.html">로그인</a></li>
             </ul>
           </div>
@@ -44,7 +33,7 @@
             <h1 class="logo">
               <a href="/index.html">
                 <img
-                  src="../images/assets/무신사.png"
+                  src="/images/assets/무신사.png"
                   class="logo-img"
                   alt="logo"
                 />
@@ -54,10 +43,12 @@
               <div class="gnb-area">
                 <nav class="gnb-wrap">
                   <ul class="gnb-list">
-                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="/index.html">HOME</a></li>
                     <li><a href="/pages/kreamstyle.html">STYLE</a></li>
                     <li>
-                      <a href="shop.html" style="font-weight: 700">SHOP</a>
+                      <a href="/pages/shop.html" style="font-weight: 700"
+                        >SHOP</a
+                      >
                     </li>
                   </ul>
                 </nav>
@@ -101,7 +92,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="슈프림">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage0.webp" />
+                      <img src="/images/trend/trendimage0.webp" />
                       <span class="name">슈프림</span>
                     </div>
                   </a>
@@ -109,7 +100,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="스투시">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage1.webp" />
+                      <img src="/images/trend/trendimage1.webp" />
                       <span class="name">스투시</span>
                     </div>
                   </a>
@@ -117,7 +108,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="반팔 티셔츠">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage2.webp" />
+                      <img src="/images/trend/trendimage2.webp" />
                       <span class="name">반팔 티셔츠</span>
                     </div>
                   </a>
@@ -125,7 +116,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="블록코어룩">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage3.webp" />
+                      <img src="/images/trend/trendimage3.webp" />
                       <span class="name">블록코어룩</span>
                     </div>
                   </a>
@@ -133,7 +124,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="HOT 그래픽">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage4.webp" />
+                      <img src="/images/trend/trendimage4.webp" />
                       <span class="name">HOT 그래픽</span>
                     </div>
                   </a>
@@ -141,7 +132,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="아식스">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage5.webp" />
+                      <img src="/images/trend/trendimage5.webp" />
                       <span class="name">아식스</span>
                     </div>
                   </a>
@@ -149,7 +140,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="아디다스">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage6.webp" />
+                      <img src="/images/trend/trendimage6.webp" />
                       <span class="name">아디다스</span>
                     </div>
                   </a>
@@ -157,15 +148,15 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="나이키">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage7.webp" />
+                      <img src="/images/trend/trendimage7.webp" />
                       <span class="name">나이키</span>
                     </div>
                   </a>
                 </div>
-                <div class="trending_keyword_slide" style="margin-right: 20px">
+                <div class="trending_keyword_slide">
                   <a href="#" class title="반팔티 랭킹">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage8.gif" />
+                      <img src="/images/trend/trendimage8.gif" />
                       <span class="name">반팔티 랭킹</span>
                     </div>
                   </a>
@@ -173,7 +164,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="더 폰">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage9.webp" />
+                      <img src="/images/trend/trendimage9.webp" />
                       <span class="name">더 폰</span>
                     </div>
                   </a>
@@ -181,7 +172,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="위시 랭킹">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage10.webp" />
+                      <img src="/images/trend/trendimage10.webp" />
                       <span class="name">위시 랭킹</span>
                     </div>
                   </a>
@@ -189,7 +180,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="반바지">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage11.webp" />
+                      <img src="/images/trend/trendimage11.webp" />
                       <span class="name">반바지</span>
                     </div>
                   </a>
@@ -197,7 +188,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="뉴발란스">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage12.webp" />
+                      <img src="/images/trend/trendimage12.webp" />
                       <span class="name">뉴발란스</span>
                     </div>
                   </a>
@@ -205,7 +196,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="살로몬">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage13.webp" />
+                      <img src="/images/trend/trendimage13.webp" />
                       <span class="name">살로몬</span>
                     </div>
                   </a>
@@ -213,7 +204,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="샌들/슬리퍼">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage14.webp" />
+                      <img src="/images/trend/trendimage14.webp" />
                       <span class="name">샌들/슬리퍼</span>
                     </div>
                   </a>
@@ -221,7 +212,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="실시간 차트">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage15.gif" />
+                      <img src="/images/trend/trendimage15.gif" />
                       <span class="name">실시간 차트</span>
                     </div>
                   </a>
@@ -229,15 +220,15 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="폴로랄프로렌">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage16.webp" />
+                      <img src="/images/trend/trendimage16.webp" />
                       <span class="name">폴로랄프로렌</span>
                     </div>
                   </a>
                 </div>
-                <div class="trending_keyword_slide" style="margin-right: 10px">
+                <div class="trending_keyword_slide">
                   <a href="#" class title="18% 쿠폰">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage17.webp" />
+                      <img src="/images/trend/trendimage17.webp" />
                       <span class="name">18% 쿠폰</span>
                     </div>
                   </a>
@@ -245,7 +236,7 @@
                 <div class="trending_keyword_slide">
                   <a href="#" class title="KREAM카드">
                     <div class="trend_keyword">
-                      <img src="../images/trend/trendimage18.webp" />
+                      <img src="/images/trend/trendimage18.webp" />
                       <span class="name">KREAM카드</span>
                     </div>
                   </a>
@@ -256,7 +247,7 @@
               <button
                 class="prev_button"
                 style="
-                  margin-right: 100px;
+                  margin-right: 20px;
                   font-weight: bold;
                   cursor: pointer;
                   width: 24px;
@@ -265,9 +256,15 @@
               >
                 &lang;
               </button>
+              <div class="paginations">
+                <button type="button" class="pagination"></button>
+                <button type="button" class="pagination"></button>
+                <button type="button" class="pagination"></button>
+              </div>
               <button
                 class="next_button"
                 style="
+                  margin-left: 20px;
                   font-weight: bold;
                   cursor: pointer;
                   width: 24px;
@@ -307,79 +304,87 @@
                   <ul class="menu_list">
                     <li class="menu">
                       <a href="#" class="menu_link" id="myCheckbox">
-                        <input type="checkbox" />
+                        <input
+                          type="checkbox"
+                          class="toggleCheckbox"
+                          data-class="class1"
+                        />
                         <span class="link_txt">상의</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input
+                          type="checkbox"
+                          class="toggleCheckbox"
+                          data-class="class2"
+                        />
                         <span class="link_txt">신발</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="toggleCheckbox" />
                         <span class="link_txt">아우터</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="toggleCheckbox" />
                         <span class="link_txt">하의</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="toggleCheckbox" />
                         <span class="link_txt">가방</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="toggleCheckbox" />
                         <span class="link_txt">지갑</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="toggleCheckbox" />
                         <span class="link_txt">시계</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="toggleCheckbox" />
                         <span class="link_txt">패션잡화</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="toggleCheckbox" />
                         <span class="link_txt">컬렉터블</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="toggleCheckbox" />
                         <span class="link_txt">뷰티</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="toggleCheckbox" />
                         <span class="link_txt">테크</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="toggleCheckbox" />
                         <span class="link_txt">캠핑</span>
                       </a>
                     </li>
                     <li class="menu">
                       <a href="#" class="menu_link">
-                        <input type="checkbox" />
+                        <input type="checkbox" class="toggleCheckbox" />
                         <span class="link_txt">가구/리빙</span>
                       </a>
                     </li>
@@ -451,7 +456,7 @@
                 <button type="button" class="sorting_title">
                   인기순
                   <img
-                    src="../images/trend/arrow-down-arrow-up-svgrepo-com.svg"
+                    src="/images/assets/arrow-down-arrow-up-svgrepo-com.svg"
                     width="18px"
                     height="18px"
                     style="margin-left: 8px"
@@ -463,14 +468,14 @@
             <div>
               <div class="search_result">
                 <div class="search_result_list">
-                  <div class="search_result_item" data-result-index="0">
+                  <div class="search_result_item class1" data-result-index="0">
                     <div class="product_card" result-index="0">
                       <a href="#" class="item_inner">
                         <div class="product">
                           <picture class="product_img">
                             <img
                               class="image_full_width"
-                              src="../images/trend/product_img0.webp"
+                              src="/images/trend/product_img0.webp"
                             />
                           </picture>
                           <div class="status_value">거래 521</div>
@@ -513,14 +518,17 @@
                       </div>
                     </div>
                   </div>
-                  <div class="search_result_item" data-result-index="1">
+                  <div class="search_result_item class2" data-result-index="1">
                     <div class="product_card" result-index="1">
                       <a href="#" class="item_inner">
-                        <div class="product">
+                        <div
+                          class="product"
+                          style="background-color: rgb(235, 240, 245)"
+                        >
                           <picture class="product_img">
                             <img
                               class="image_full_width"
-                              src="../images/trend/product_img1.webp"
+                              src="/images/trend/product_img1.webp"
                             />
                           </picture>
                           <div class="status_value">거래 49.2만</div>
@@ -570,14 +578,14 @@
                       </div>
                     </div>
                   </div>
-                  <div class="search_result_item" data-result-index="2">
+                  <div class="search_result_item class1" data-result-index="2">
                     <div class="product_card" result-index="2">
                       <a href="#" class="item_inner">
                         <div class="product">
                           <picture class="product_img">
                             <img
                               class="image_full_width"
-                              src="../images/trend/product_img2.webp"
+                              src="/images/trend/product_img2.webp"
                             />
                           </picture>
                           <div class="status_value">거래 2.1만</div>
@@ -629,14 +637,17 @@
                       </div>
                     </div>
                   </div>
-                  <div class="search_result_item" data-result-index="3">
+                  <div class="search_result_item class2" data-result-index="3">
                     <div class="product_card" result-index="3">
                       <a href="#" class="item_inner">
-                        <div class="product">
+                        <div
+                          class="product"
+                          style="background-color: rgb(241, 241, 234)"
+                        >
                           <picture class="product_img">
                             <img
                               class="image_full_width"
-                              src="../images/trend/product_img3.webp"
+                              src="/images/trend/product_img3.webp"
                             />
                           </picture>
                           <div class="status_value">거래 10.3만</div>
@@ -686,14 +697,17 @@
                       </div>
                     </div>
                   </div>
-                  <div class="search_result_item" data-result-index="4">
+                  <div class="search_result_item class2" data-result-index="4">
                     <div class="product_card" result-index="4">
                       <a href="#" class="item_inner">
-                        <div class="product">
+                        <div
+                          class="product"
+                          style="background-color: rgb(235, 240, 245)"
+                        >
                           <picture class="product_img">
                             <img
                               class="image_full_width"
-                              src="../images/trend/product_img4.webp"
+                              src="/images/trend/product_img4.webp"
                             />
                           </picture>
                           <div class="status_value">거래 19.4만</div>
@@ -743,14 +757,14 @@
                       </div>
                     </div>
                   </div>
-                  <div class="search_result_item" data-result-index="5">
+                  <div class="search_result_item class1" data-result-index="5">
                     <div class="product_card" result-index="5">
                       <a href="#" class="item_inner">
                         <div class="product">
                           <picture class="product_img">
                             <img
                               class="image_full_width"
-                              src="../images/trend/product_img5.webp"
+                              src="/images/trend/product_img5.webp"
                             />
                           </picture>
                           <div class="status_value">거래 1.9만</div>
@@ -802,120 +816,133 @@
                       </div>
                     </div>
                   </div>
+                  <div class="search_result_item class2" data-result-index="6">
+                    <div class="product_card" result-index="6">
+                      <a href="#" class="item_inner">
+                        <div class="product">
+                          <picture class="product_img">
+                            <img
+                              class="image_full_width"
+                              src="/images/trend/product_img6.webp"
+                            />
+                          </picture>
+                          <div class="status_value">거래 2.5만</div>
+                        </div>
+                        <div class="product_info_area">
+                          <div class="title">
+                            <p class="product_info_brand">Asics</p>
+                            <div class="product_info_product_name">
+                              <p class="name">
+                                Asics Gel-Kayano 14 Cream Black
+                              </p>
+                              <p class="translated_name">
+                                아식스 젤 카야노 14 크림 블랙
+                              </p>
+                            </div>
+                          </div>
+                          <div class="tags">
+                            <div class="display_tag_item">
+                              <div class="tag_icon">
+                                <i
+                                  class="fa-solid fa-bolt fa-sm"
+                                  style="color: #0ae506"
+                                ></i>
+                              </div>
+                              <span class="tag_text">빠른배송 </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="price_area">
+                          <p class="amount">195,000원</p>
+                          <p class="desc">즉시 구매가</p>
+                        </div>
+                      </a>
+                      <div class="action_wish_review">
+                        <span class="wish_figure">
+                          <i
+                            class="fa-regular fa-bookmark fa-sm"
+                            style="color: rgba(34, 34, 34, 0.5)"
+                          ></i>
+                          <span class="text">5.2만</span>
+                        </span>
+                        <span class="review_figure">
+                          <i
+                            class="fa-regular fa-newspaper fa-sm"
+                            style="color: rgba(34, 34, 34, 0.5)"
+                          ></i>
+                          <span class="text">911</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="search_result_item class1" data-result-index="7">
+                    <div class="product_card" result-index="7">
+                      <a href="#" class="item_inner">
+                        <div class="product">
+                          <picture class="product_img">
+                            <img
+                              class="image_full_width"
+                              src="/images/trend/product_img7.webp"
+                            />
+                          </picture>
+                          <div class="status_value">거래 4,240</div>
+                        </div>
+                        <div class="product_info_area">
+                          <div class="title">
+                            <p class="product_info_brand">Stussy</p>
+                            <div class="product_info_product_name">
+                              <p class="name">Stussy Cherries T-Shirt White</p>
+                              <p class="translated_name">
+                                스투시 체리 티셔츠 화이트
+                              </p>
+                            </div>
+                          </div>
+                          <div class="tags">
+                            <div class="display_tag_item">
+                              <div class="tag_icon">
+                                <i
+                                  class="fa-solid fa-bolt fa-sm"
+                                  style="color: #0ae506"
+                                ></i>
+                              </div>
+                              <span class="tag_text">빠른배송 </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="price_area">
+                          <p class="amount">72,000원</p>
+                          <p class="desc">즉시 구매가</p>
+                        </div>
+                      </a>
+                      <div class="action_wish_review">
+                        <span class="wish_figure">
+                          <i
+                            class="fa-regular fa-bookmark fa-sm"
+                            style="color: rgba(34, 34, 34, 0.5)"
+                          ></i>
+                          <span class="text">1.6만</span>
+                        </span>
+                        <span class="review_figure">
+                          <i
+                            class="fa-regular fa-newspaper fa-sm"
+                            style="color: rgba(34, 34, 34, 0.5)"
+                          ></i>
+                          <span class="text">33</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="notice-whole">
-        <div class="notice">
-          <div class="notice-header">
-            <div class="notice-close">
-              <button onclick="closeNotice()">
-                <i class="fa-solid fa-x"></i>
-              </button>
-            </div>
-            <div class="notice-word">알림</div>
-          </div>
-          <div class="notice-main">
-            <nav>
-              <ul>
-                <li class="tab-active"><a href="">쇼핑</a></li>
-                <li><a href="">스타일</a></li>
-              </ul>
-            </nav>
-            <div class="category">
-              <div><button class="button-active">전체</button></div>
-              <div><button>거래</button></div>
-              <div><button>입찰</button></div>
-              <div><button>보관판매</button></div>
-              <div><button>관심/발매</button></div>
-              <div><button>혜택</button></div>
-              <div><button>기타</button></div>
-            </div>
-          </div>
-          <div class="notice-list">
-            <p>알림 설정 및 삭제는 앱에서 가능합니다.</p>
-            <h3>지난 알림</h3>
-            <ul>
-              <li>
-                <div class="notice-icon">
-                  <img
-                    src="/images/notice/cart_icon.png"
-                    width="30px"
-                    height="30px"
-                  />
-                </div>
-              </li>
-              <li>
-                <div class="notice-buy">구매 확정</div>
-                <div class="notice-buyInfo">
-                  B-BR89573049 - [KREAM 단독] Kashiko x... [OS]: 상품 구매가
-                  확정되었습니다.
-                </div>
-                <p>2024년 7월 20일</p>
-              </li>
-              <li>
-                <img
-                  src="/images/notice/키링.webp"
-                  width="62px"
-                  height="62px"
-                />
-              </li>
-            </ul>
-
-            <ul>
-              <li>
-                <div class="notice-icon">
-                  <img
-                    src="/images/notice/cart_icon.png"
-                    width="30px"
-                    height="30px"
-                  />
-                </div>
-              </li>
-              <li>
-                <div class="notice-buy">배송 완료</div>
-                <div class="notice-buyInfo">
-                  B-BR89573049 - [KREAM 단독] Kashiko x... [OS]: 상품 배송이
-                  완료되었습니다.
-                </div>
-                <p>2024년 7월 13일</p>
-              </li>
-              <li>
-                <img
-                  src="/images/notice/키링.webp"
-                  width="62px"
-                  height="62px"
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <footer></footer>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const prevButton = document.querySelector(".prev_button");
-        const nextButton = document.querySelector(".next_button");
-        const camera = document.querySelector(".flicking-camera");
-        let scrollAmount = 0;
-
-        nextButton.addEventListener("click", function () {
-          scrollAmount -= 1200;
-          if (scrollAmount < -2000) scrollAmount = -1350;
-          camera.style.transform = `translateX(${scrollAmount}px)`;
-        });
-
-        prevButton.addEventListener("click", function () {
-          scrollAmount += 1200;
-          if (scrollAmount > 0) scrollAmount = 0; // Prevent scrolling past the first item
-          camera.style.transform = `translateX(${scrollAmount}px)`;
-        });
-      });
-    </script>
+    <script src="/js/button.js"></script>
     <script src="/js/notice.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>
