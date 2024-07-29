@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Page</title>
+    <link rel="stylesheet" href="/css/recommend.css" />
+    <link rel="stylesheet" href="/css/brand_introduce.css" />
+    <link rel="stylesheet" href="/css/mypage.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+  </head>
+  <body>
+    <header class="header-wrap">
+      <div class="header-top">
+        <div class="top-inner">
+          <ul class="top-list">
+            <li><a href="">고객센터</a></li>
+            <li><a href="/pages/mypage.html">마이페이지</a></li>
+            <li><a href="">관심</a></li>
+            <li><a href="" id="notification">알림</a></li>
+            <li><a href="pages/login.html">로그인</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-main">
+        <div class="main-inner">
+          <h1 class="logo">
+            <a href="">
+              <img src="/images/assets/크림.png" class="logo-img" alt="logo" />
+            </a>
+          </h1>
+          <div class="right">
+            <div class="gnb-area">
+              <nav class="gnb-wrap">
+                <ul class="gnb-list">
+                  <li><a href="/index.html" class="active">HOME</a></li>
+                  <li><a href="/pages/kreamstyle.html">STYLE</a></li>
+                  <li><a href="/pages/shop.html">SHOP</a></li>
+                </ul>
+              </nav>
+              <i class="fa-solid fa-magnifying-glass fa-xl" id="searchBtn"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>마이 페이지</h2>
+        <nav class="nav">
+          <h3 class="shopping-info">쇼핑 정보</h3>
+          <ul>
+            <li><a href="#">구매 내역</a></li>
+            <li><a href="#">판매 내역</a></li>
+            <li><a href="#">보관 판매</a></li>
+            <li><a href="#" class="active">관심</a></li>
+          </ul>
+          <h3 class="my-info">내 정보</h3>
+          <ul>
+            <li><a href="#">로그인 정보</a></li>
+            <li><a href="#">프로필 관리</a></li>
+            <li><a href="#">판매자 등급</a></li>
+            <li><a href="#">주소록</a></li>
+            <li><a href="#">결제 정보</a></li>
+            <li><a href="#">판매 정산 계좌</a></li>
+            <li><a href="#">현금영수증 정보</a></li>
+            <li><a href="#">포인트</a></li>
+            <li><a href="#">쿠폰</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <header class="header">
+          <h2>관심</h2>
+          <nav class="sub-nav">
+            <ul>
+              <li><a href="#" class="active">상품</a></li>
+              <li><a href="#">스타일</a></li>
+              <li><a href="#">브랜드</a></li>
+              <li><a href="#">최근 본 상품</a></li>
+            </ul>
+          </nav>
+        </header>
+        <div class="header-util">
+          <div class="item-count">
+            <span>전체</span> <span id="itemCount"></span>
+          </div>
+          <div class="align-item">
+            <span>즉시 구매가 순</span>
+            <img src="/images/assets/sort.svg" alt="" id="sortButton" />
+          </div>
+        </div>
+        <section class="content">
+          <div id="wishlist"></div>
+        </section>
+      </main>
+    </div>
+    <script src="/js/mypage.js"></script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

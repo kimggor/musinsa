@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   let currentIndex = 0;
-  const itemsPerPage = 5; // 한 번에 로드할 제품 수
+  const itemsPerPage = 5;
   const productList = document.getElementById("productList");
   const moreDetailBtn = document.getElementById("moreDetail");
 
@@ -110,6 +110,12 @@ document.addEventListener("DOMContentLoaded", function () {
       wishImg.alt = "Wish";
       wishImg.style.width = "24px";
       wishBtn.appendChild(wishImg);
+
+      // 로컬 스토리지에서 위시리스트를 확인하고 해당 아이템이 있을 경우 bookmark on.svg로 변경
+      const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      if (wishlist.some((item) => item.title === product.title)) {
+        wishImg.src = "./images/assets/bookmark on.svg";
+      }
 
       thumbBox.appendChild(productDiv);
       thumbBox.appendChild(statusValue);
@@ -184,8 +190,10 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         if (wishImg.src.includes("bookmark.svg")) {
           wishImg.src = "./images/assets/bookmark on.svg";
+          addToWishlist(product);
         } else {
           wishImg.src = "./images/assets/bookmark.svg";
+          removeFromWishlist(product);
         }
       });
     });
@@ -199,4 +207,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   loadProducts();
+
+  function addToWishlist(product) {
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    wishlist.push(product);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  }
+
+  function removeFromWishlist(product) {
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    wishlist = wishlist.filter((item) => item.title !== product.title);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  }
 });
