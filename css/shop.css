@@ -463,3 +463,16 @@ button {
   width: 90px;
   height: 90px;
 }
+.pagination {
+  background: #d3d3d3;
+  border-radius: 6px;
+  color: transparent;
+  cursor: pointer;
+  font-size: 0;
+  height: 6px;
+  margin: 0 4px;
+  width: 6px;
+}
+.pagination.active {
+  background-color: #222;
+}
