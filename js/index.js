@@ -15,12 +15,20 @@ document.querySelector(".search_delete").addEventListener("click", function () {
   clearSearch();
 });
 document.querySelector(".close-overlay").addEventListener("click", function () {
-  clearSearch();
+  closeSearch();
 });
-function clearSearch() {
-  document.getElementById("search").value = "";
+function closeSearch() {
   document.body.classList.remove("overlay-visible");
   document.getElementById("search-overlay").classList.add("hidden");
+}
+
+function clearSearch() {
+  document.getElementById("search").value = "";
+  document.querySelector("main").style.display = "block";
+  document.querySelector(".search_delete").style.display = "block";
+  document.querySelector(".recommend").style.display = "block";
+  document.querySelector(".ranking").style.display = "block";
+  document.querySelector(".collabo").style.display = "block";
 }
 
 document.getElementById("search").addEventListener("input", function () {

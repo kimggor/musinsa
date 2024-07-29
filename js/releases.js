@@ -135,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const amountDiv = document.createElement("div");
       amountDiv.classList.add("amount");
 
-      // Add discount if available
       if (product.discount) {
         const discountSpan = document.createElement("span");
         discountSpan.classList.add("discount");
@@ -159,7 +158,6 @@ document.addEventListener("DOMContentLoaded", function () {
       infoBox.appendChild(brandDiv);
       infoBox.appendChild(nameP);
 
-      // Add tags if available
       if (product.tags) {
         const tagsDiv = document.createElement("div");
         tagsDiv.classList.add("tags");
@@ -182,7 +180,6 @@ document.addEventListener("DOMContentLoaded", function () {
       productItem.appendChild(itemInner);
       productList.appendChild(productItem);
 
-      // Add event listener for wish button
       wishBtn.addEventListener("click", function (e) {
         e.preventDefault();
         if (wishImg.src.includes("bookmark.svg")) {
@@ -201,6 +198,5 @@ document.addEventListener("DOMContentLoaded", function () {
     loadProducts();
   });
 
-  // Initial load
   loadProducts();
 });

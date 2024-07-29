@@ -55,6 +55,10 @@ button {
   right: 20px;
   top: 14px;
 }
+.close-overlay img {
+  width: 100%;
+  height: 100%;
+}
 .main-wrap {
   margin-top: 20px !important;
   margin: 0 auto;
