@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
   const productsThree = [
     {
-      src: "/images/productsThree/img-11.webp",
+      src: "/images/releases_img/img-11.webp",
       title: "Vans x BAPE Old Skool TB LX Black",
       brand: "Vans",
       price: "300,000원",
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fastDelivery: false,
     },
     {
-      src: "/images/productsThree/img-12.webp",
+      src: "/images/releases_img/img-12.webp",
       title: "Suade Fire Suade Tee Pigment Black",
       brand: "Suade",
       price: "33,600원",
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["쿠폰", "적립", "무료배송"],
     },
     {
-      src: "/images/productsThree/img-13.webp",
+      src: "/images/releases_img/img-13.webp",
       title: "Nike NSW Tech Fleece Full Zip Hoodie Black - Asia",
       brand: "Nike",
       price: "130,000원",
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fastDelivery: false,
     },
     {
-      src: "/images/productsThree/img-14.webp",
+      src: "/images/releases_img/img-14.webp",
       title:
         "Adidas Manchester United 2024/25 Away Jersey Night Indigo - KR Sizing",
       brand: "Adidas",
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fastDelivery: false,
     },
     {
-      src: "/images/productsThree/img-15.webp",
+      src: "/images/releases_img/img-15.webp",
       title: "Artwork Museum Horn T-Shirt Charcoal",
       brand: "Artwork Museum",
       price: "71,100원",
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["적립"],
     },
     {
-      src: "/images/productsThree/img-16.webp",
+      src: "/images/releases_img/img-16.webp",
       title: "Stussy Beach Roots Pigment Dyed T-Shirt Brown",
       brand: "Stussy",
       price: "94,000원",
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fastDelivery: false,
     },
     {
-      src: "/images/productsThree/img-17.webp",
+      src: "/images/releases_img/img-17.webp",
       title: "Human Made Graphic T-Shirt #16 Black",
       brand: "Human Made",
       price: "137,000원",
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fastDelivery: false,
     },
     {
-      src: "/images/productsThree/img-18.webp",
+      src: "/images/releases_img/img-18.webp",
       title: "Nike Mercurial Vapor 16 Pro TF Glacier Blue Blue Orbit",
       brand: "Nike",
       price: "127,000원",
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fastDelivery: false,
     },
     {
-      src: "/images/productsThree/img-19.webp",
+      src: "/images/releases_img/img-19.webp",
       title: "TNGT Over-fit Tarry Stripe Boucle MT M Navy",
       brand: "TNGT",
       price: "79,000원",
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["적립"],
     },
     {
-      src: "/images/productsThree/img-20.webp",
+      src: "/images/releases_img/img-20.webp",
       title: "Stussy Grid T-Shirt Black",
       brand: "Stussy",
       price: "81,000원",
