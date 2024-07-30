@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const swiper = new Swiper(".mySwiper1", {
     autoplay: {
-      delay: 4000,
+      delay: 3800,
       disableOnInteraction: false,
     },
     navigation: {
