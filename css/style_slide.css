@@ -1,0 +1,114 @@
+.style-content-title-wrap {
+  padding-left: 40px;
+  padding-right: 40px;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+}
+.style-content-title-wrap .style-content-title {
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+}
+.style-content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+  padding: 30px 0 60px;
+}
+.style-slide {
+  padding: 0 40px;
+  position: relative;
+}
+.style-slide .flicking-viewport {
+  user-select: none;
+  overflow: hidden;
+  position: relative;
+  touch-action: pan-y;
+  width: 100%; /* Ensure the viewport takes the full width */
+}
+.flicking-camera {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  position: relative;
+
+  transition: transform 0.3s ease;
+}
+.slide-style-card {
+  width: 175px;
+  flex-shrink: 0;
+  margin-right: 30px; /* Add margin between cards */
+}
+
+.slide-style {
+  margin-right: 4px;
+}
+.card-link {
+  border-radius: 10px;
+  display: block;
+  outline-width: 0;
+  outline: none;
+  overflow: hidden;
+  padding-top: 132.6530612245%;
+  position: relative;
+}
+.img-card {
+  border-radius: 10px;
+  padding: 1px;
+  height: 100%;
+  left: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.profile-img {
+  border-radius: 50%;
+  height: 36px;
+  left: 8px;
+  overflow: hidden;
+  position: absolute;
+  top: 8px;
+  width: 36px;
+  z-index: 1;
+}
+.bottom-left {
+  bottom: 8px;
+  color: #fff;
+  display: flex;
+  font-size: 13px;
+  left: 8px;
+  overflow: hidden;
+  position: absolute;
+  right: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  z-index: 1;
+}
+.slide-arrow {
+  background: rgb(255, 255, 255, 0.5);
+  border-radius: 50%;
+  border: none;
+  border: 1px solid;
+  color: black;
+  cursor: pointer;
+  font-size: 12px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  z-index: 2;
+}
+.slide-arrow.left {
+  left: 0;
+}
+.slide-arrow.right {
+  right: 0;
+}

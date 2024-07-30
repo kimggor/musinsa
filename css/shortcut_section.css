@@ -56,8 +56,12 @@
   transition: opacity 0.6s ease-in-out;
   vertical-align: top;
 }
-.banner_item {
+.banner_item#bannerOne {
   background-color: rgb(40, 41, 33);
+  position: relative;
+}
+.banner_item#bannerTwo {
+  background-color: #a4b5c8;
   position: relative;
 }
 

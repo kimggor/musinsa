@@ -144,7 +144,9 @@
   padding: 0 32px;
   text-align: center;
 }
-.product-btn #moreDetail {
+.product-btn #moreDetail1,
+.product-btn #moreDetail2,
+.product-btn #moreDetail3 {
   margin-top: 40px;
   padding: 0 30px;
   border: 1px solid #d3d3d3;
@@ -180,4 +182,18 @@
   height: 20px;
   margin-right: 4px;
   padding: 4px;
+}
+.fast-delivery {
+  background-color: #f2f9f6;
+  color: #31b46e;
+  font-size: 12px;
+  display: flex;
+  border-radius: 2px;
+  display: inline-flex;
+  font-size: 11px;
+  height: 20px;
+  margin-right: 4px;
+  padding: 4px;
+  position: relative;
+  width: fit-content;
 }

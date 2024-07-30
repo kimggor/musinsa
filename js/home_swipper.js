@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const swiperWrapper = document.querySelector(".swiper-wrapper");
   const totalImages = 13;
   const colors = [
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "#9CB596",
   ];
 
-  for (let i = 1; i <= totalImages; i++) {
+  const createSwiperSlide = (i) => {
     const swiperSlide = document.createElement("div");
     swiperSlide.classList.add("swiper-slide");
     swiperSlide.style.backgroundColor = colors[i - 1];
@@ -27,12 +27,34 @@ document.addEventListener("DOMContentLoaded", function () {
     img.alt = `Image ${i}`;
 
     swiperSlide.appendChild(img);
+    return swiperSlide;
+  };
+
+  for (let i = 1; i <= totalImages; i++) {
+    const swiperSlide = createSwiperSlide(i);
     swiperWrapper.appendChild(swiperSlide);
   }
 
-  var swiper = new Swiper(".mySwiper", {
+  const updateNavigationStyles = (activeIndex) => {
+    const prevButton = document.querySelector(".swiper-button-prev");
+    const nextButton = document.querySelector(".swiper-button-next");
+    const bullets = document.querySelectorAll(".swiper-pagination-bullet");
+    const darkIndex = [1, 3, 11];
+    const isDark = darkIndex.includes(activeIndex);
+    const arrowColor = isDark ? "black" : "white";
+
+    prevButton.style.backgroundImage = `url('../images/assets/left-arrow-${arrowColor}.svg')`;
+    nextButton.style.backgroundImage = `url('../images/assets/right-arrow-${arrowColor}.svg')`;
+
+    bullets.forEach((bullet, index) => {
+      bullet.style.opacity = index === activeIndex ? "1" : "0.2";
+      bullet.style.backgroundColor = isDark ? "#000" : "#fff";
+    });
+  };
+
+  const swiper = new Swiper(".mySwiper1", {
     autoplay: {
-      delay: 3000,
+      delay: 4000,
       disableOnInteraction: false,
     },
     navigation: {
@@ -45,40 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     on: {
       slideChange: function () {
-        const activeIndex = swiper.activeIndex;
-        const prevButton = document.querySelector(".swiper-button-prev");
-        const nextButton = document.querySelector(".swiper-button-next");
-        const bullets = document.querySelectorAll(".swiper-pagination-bullet");
-
-        if (activeIndex === 1 || activeIndex === 3 || activeIndex === 11) {
-          prevButton.style.backgroundImage =
-            "url('../images/assets/left-arrow.svg')";
-          nextButton.style.backgroundImage =
-            "url('../images/assets/right-arrow.svg')";
-          bullets.forEach((bullet, index) => {
-            if (index === activeIndex) {
-              bullet.style.opacity = "1";
-              bullet.style.backgroundColor = "#000";
-            } else {
-              bullet.style.opacity = "0.2";
-              bullet.style.backgroundColor = "#000";
-            }
-          });
-        } else {
-          prevButton.style.backgroundImage =
-            "url('../images/assets/left-arrow-white.svg')";
-          nextButton.style.backgroundImage =
-            "url('../images/assets/right-arrow-white.svg')";
-          bullets.forEach((bullet, index) => {
-            if (index === activeIndex) {
-              bullet.style.opacity = "1";
-              bullet.style.backgroundColor = "#fff";
-            } else {
-              bullet.style.opacity = "0.2";
-              bullet.style.backgroundColor = "#fff";
-            }
-          });
-        }
+        updateNavigationStyles(swiper.activeIndex);
       },
     },
   });
